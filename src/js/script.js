@@ -39,6 +39,12 @@ function switchTheme(e) {
   }
 }
 
+
+// Check if the user prefers dark mode
+
+const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+
 // Save user preference on load
 
 const currentTheme = localStorage.getItem("theme")
@@ -51,7 +57,17 @@ if (currentTheme) {
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
   }
-}
+  
+}else if(prefersDarkMode){
+    document.documentElement.setAttribute("data-theme", 'dark');
+    toggleSwitch.checked = true;
+
+
+  }else{
+      document.documentElement.setAttribute("data-theme", 'light');
+    toggleSwitch.checked = false;
+
+  }
 
 //Adding date
 
@@ -59,3 +75,4 @@ let myDate = document.querySelector("#datee");
 
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes;
+
