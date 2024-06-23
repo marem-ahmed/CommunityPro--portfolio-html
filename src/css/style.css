@@ -71,6 +71,10 @@ body {
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
 }
+img,button,i,a{
+  -webkit-user-select: none;
+   user-select: none;
+}
 
 /* Navbar */
 .navbar {
