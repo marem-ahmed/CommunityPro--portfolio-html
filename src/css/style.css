@@ -63,6 +63,10 @@ a {
   text-decoration: none;
   color: var(--text-color);
 }
+a,button,img,i{
+  -webkit-user-select: none;
+  user-select: none;
+}
 
 /* Main styling */
 body {
